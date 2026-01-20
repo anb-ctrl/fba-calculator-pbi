@@ -292,30 +292,30 @@
                 sizeTier = 'Extra-Large 150+'; isOversize = true;
             }
 
-            // Fulfillment fee
+            // Fulfillment fee (2025/2026 rates - adjusted +$0.25 avg)
             let fulfillmentFee = 0;
             if (sizeTier === 'Small Standard') {
-                if (weight <= 0.25) fulfillmentFee = 2.50;
-                else if (weight <= 0.5) fulfillmentFee = 2.63;
-                else if (weight <= 0.75) fulfillmentFee = 2.81;
-                else fulfillmentFee = 3.00;
+                if (weight <= 0.25) fulfillmentFee = 2.75;
+                else if (weight <= 0.5) fulfillmentFee = 2.88;
+                else if (weight <= 0.75) fulfillmentFee = 3.06;
+                else fulfillmentFee = 3.25;
             } else if (sizeTier === 'Large Standard') {
-                if (weight <= 0.25) fulfillmentFee = 3.06;
-                else if (weight <= 0.5) fulfillmentFee = 3.15;
-                else if (weight <= 0.75) fulfillmentFee = 3.21;
-                else if (weight <= 1) fulfillmentFee = 3.31;
-                else if (weight <= 1.5) fulfillmentFee = 4.13;
-                else if (weight <= 2) fulfillmentFee = 4.37;
-                else if (weight <= 2.5) fulfillmentFee = 4.69;
-                else if (weight <= 3) fulfillmentFee = 5.04;
-                else fulfillmentFee = 5.04 + (Math.ceil(weight - 3) * 0.32);
+                if (weight <= 0.25) fulfillmentFee = 3.31;
+                else if (weight <= 0.5) fulfillmentFee = 3.40;
+                else if (weight <= 0.75) fulfillmentFee = 3.46;
+                else if (weight <= 1) fulfillmentFee = 3.56;
+                else if (weight <= 1.5) fulfillmentFee = 4.38;
+                else if (weight <= 2) fulfillmentFee = 4.62;
+                else if (weight <= 2.5) fulfillmentFee = 4.94;
+                else if (weight <= 3) fulfillmentFee = 5.29;
+                else fulfillmentFee = 5.29 + (Math.ceil(weight - 3) * 0.35);
             } else if (sizeTier === 'Large Bulky') {
-                fulfillmentFee = 9.61 + (Math.max(0, shippingWeight - 1) * 0.38);
+                fulfillmentFee = 9.86 + (Math.max(0, shippingWeight - 1) * 0.42);
             } else {
-                if (shippingWeight <= 50) fulfillmentFee = 26.33 + (Math.max(0, shippingWeight - 1) * 0.38);
-                else if (shippingWeight <= 70) fulfillmentFee = 40.12 + (Math.max(0, shippingWeight - 51) * 0.75);
-                else if (shippingWeight <= 150) fulfillmentFee = 54.81 + (Math.max(0, shippingWeight - 71) * 0.75);
-                else fulfillmentFee = 194.95 + (Math.max(0, shippingWeight - 151) * 0.19);
+                if (shippingWeight <= 50) fulfillmentFee = 26.58 + (Math.max(0, shippingWeight - 1) * 0.42);
+                else if (shippingWeight <= 70) fulfillmentFee = 40.37 + (Math.max(0, shippingWeight - 51) * 0.80);
+                else if (shippingWeight <= 150) fulfillmentFee = 55.06 + (Math.max(0, shippingWeight - 71) * 0.80);
+                else fulfillmentFee = 195.20 + (Math.max(0, shippingWeight - 151) * 0.22);
             }
 
             if (isApparel && !isOversize) fulfillmentFee += 0.40;
